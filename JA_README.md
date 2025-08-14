@@ -17,4 +17,4 @@ Co-Driverの使用には以下のソフトウェアが必要です。 インス�
  - qwen2.5:7b-instruct-q4_K_M 約5GB
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/USERNAME/REPO/refs/heads/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mimikonadeshiko/Co-Driver/refs/heads/main/install.sh | bash
