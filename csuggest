@@ -1,0 +1,16 @@
+#!/bin/zsh
+MODEL="qwen2.5:7b-instruct-q4_K_M"
+CURDIR=$(pwd)
+
+query="$*"
+[[ -z "$query" ]] && read -r "?Enter your explanation or command: " query
+
+prompt="You are a shell assistant.
+If the input is already a command, improve it into a single-line command without changing its meaning, making it safer, clearer, and more efficient.
+If the input is a natural-language description, generate a single-line shell command that accomplishes it.
+Do not include code block markers (\`\`\` or ''') or any extra explanations.
+Output exactly one line: the command.
+Current directory: $CURDIR
+Input: $query"
+
+ollama run "$MODEL" "$prompt" | tr -d '\n'
